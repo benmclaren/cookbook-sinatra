@@ -12,5 +12,15 @@ end
 # this is the routing part
 get '/' do
   # everything inside here is the contoller part
-  'Hello world!'
+  @usernames = [ 'ssaunier', 'Papillard' ]
+  erb :index
+end
+
+get '/about' do
+  erb :about
+end
+
+get '/team/:username' do
+  puts params[:username]
+  "The username is #{params[:username]}"
 end
